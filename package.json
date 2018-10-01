@@ -1,0 +1,48 @@
+{
+  "name": "blacklisted-wallets-bitcoin",
+  "version": "1.0.0",
+  "description": "Check to see if a bitcoin wallet has had transactions with a blacklisted wallet.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H0sway/blockchain-wallets-bitcoin.git"
+  },
+  "keywords": [
+    "Bitcoin",
+    "blockchain",
+    "blacklisted",
+    "wallets",
+    "bitcoin",
+    "wallet"
+  ],
+  "author": "Joshua K. Russell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H0sway/blockchain-wallets-bitcoin/issues"
+  },
+  "homepage": "https://github.com/H0sway/blockchain-wallets-bitcoin#readme",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.3",
+    "path": "^0.12.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
