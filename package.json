@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/H0sway/blockchain-wallets-bitcoin#readme",
   "dependencies": {
+    "bloomer": "^0.6.3",
     "bulma": "^0.7.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

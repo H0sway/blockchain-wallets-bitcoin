@@ -2,7 +2,19 @@
 @charset "utf-8";
 @import "~bulma/bulma";
 
-body {
-  margin: 0 auto;
-  text-align: center;
+/* Import reset scss file */
+@import 'reset';
+
+/* Define variables */
+$primary-color: #ffc33b;
+$white: #ffffff;
+
+.navbar-brand {
+  a {
+    margin: 0 auto;
+    color: $primary-color;
+  }
+  a:hover {
+    color: $white;
+  }
 }
