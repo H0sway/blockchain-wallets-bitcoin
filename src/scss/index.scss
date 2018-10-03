@@ -4,13 +4,33 @@
 /* Define variables */
 $primary-color: #ffc33b;
 $white: #ffffff;
+$black: #000000;
+$dark-grey: #494c4c;
+$default-blue: #003bb2;
 
-.navbar-brand {
-  a {
-    margin: 0 auto;
+.navbar-default {
+  background-color: $black;
+
+  .navbar-brand {
     color: $primary-color;
   }
-  a:hover {
-    color: $white;
+  .navbar-brand:hover {
+    color: $primary-color;
+  }
+  .navbar-nav {
+    li {
+      a {
+        color: $primary-color
+      }
+      a:hover {
+        color: $white;
+      }
+    }
+    .active {
+      a {
+        color: $white;
+        background-color: $black;
+      }
+    }
   }
 }
