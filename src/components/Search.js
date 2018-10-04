@@ -40,7 +40,7 @@ class Search extends Component {
       })
       axios({
         method: 'POST',
-        address: address
+        url: `api/blockchain/${address}`
       })
       .then(data => {
         console.log(data);

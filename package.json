@@ -32,6 +32,7 @@
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "json-stringify-safe": "^5.0.1",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
