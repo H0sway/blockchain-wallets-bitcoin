@@ -5,8 +5,17 @@
 The purpose of this web application is to allow users a quick and easy way to see if a specific bitcoin wallet has had any interactions with "blacklisted" wallets. Users can input a bitcoin wallet and the app will find all transactions that wallet has made and cross-reference them with a list of "blacklisted" wallets. If any of the wallet addresses match then the user will be notified and shown which wallet(s) matched.
 
 ## Build
-This app is currently a front-end React app. While still in development, the finished product will pull from 3rd party APIs for
-data on a wallet's transactions and a list of blacklisted wallets. Future goals include adding the blockchain to a server and connecting it to the front-end as well as potentially adding a crowdsourced list of blacklisted bitcoin addresses. When the build for this app changes, so will this section.
+This app has been built using ReactJS on the front-end with a NodeJS server.
+
+While still in development, the finished product will pull from 3rd party APIs for data on a wallet's transactions and a list of blacklisted wallets. Future goals include adding the blockchain to the server and connecting it to the front-end as well as potentially adding a crowdsourced list of blacklisted bitcoin addresses. When the build for this app changes, so will this section.
+
+## Installing and Running
+1. Make sure you have Node and a package manager installed (I used npm).
+2. Clone this repository and cd into it from the terminal.
+3. Install dependencies (ex. `npm install`).
+4. Run the start script to start the server (ex. `npm start`).
+5. Build the frontend with the dev script (ex. `npm run dev`).
+6. For production, run the build script (ex. `npm run build`).
 
 ## MVP
 
