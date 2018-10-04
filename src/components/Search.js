@@ -39,9 +39,8 @@ class Search extends Component {
         dataLoading: true,
       })
       axios({
-        method: 'GET',
-        headers: {"Access-Control-Allow-Origin": "localhost:8080"},
-        url: `https://blockchain.info/rawaddr/${address}?cors=true`
+        method: 'POST',
+        address: address
       })
       .then(data => {
         console.log(data);
