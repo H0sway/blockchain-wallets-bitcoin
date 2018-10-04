@@ -1,4 +1,72 @@
-body {
+/* Import reset scss file */
+@import 'reset';
+
+/* Define variables */
+$primary-color: #ffc33b;
+$white: #ffffff;
+$black: #000000;
+$dark-grey: #494c4c;
+$light-grey: #bcbcbc;
+$default-blue: #003bb2;
+$default-green: #00b200;
+
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-default {
+  background-color: $black;
+  border: none;
+  margin: 0;
+
+  .navbar-brand {
+    color: $primary-color;
+  }
+  .navbar-brand:hover {
+    color: $primary-color;
+  }
+  .navbar-nav {
+    li {
+      a {
+        color: $primary-color
+      }
+      a:hover {
+        color: $white;
+      }
+    }
+    .active {
+      a {
+        color: $white;
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.Search {
+  background-color: $light-grey;
+  border-bottom: 2px solid $dark-grey;
+  padding: 20px;
+}
+
+form {
+  max-width: 50em;
   margin: 0 auto;
-  text-align: center;
+
+  .form-group {
+    text-align: left;
+  }
+
+  button {
+    color: $black;
+    background-color: $white;
+    padding: 0.4em 0.8em;
+    border: 0.15em solid $default-green;
+    border-radius: 12%;
+    transition: 0.2s;
+  }
+  button:hover {
+    background-color: $default-green;
+    color: $white;
+  }
 }
