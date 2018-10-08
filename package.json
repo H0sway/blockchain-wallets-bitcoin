@@ -4,7 +4,8 @@
   "description": "Check to see if a bitcoin wallet has had transactions with a blacklisted wallet.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "nodemon app.js",
+    "dev": "webpack --watch --mode development",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -27,6 +28,8 @@
   "homepage": "https://github.com/H0sway/blockchain-wallets-bitcoin#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "json-prune": "^1.1.0",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",

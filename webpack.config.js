@@ -30,7 +30,7 @@ const config = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./index.html",
       filename: "./index.html"
     }),
     new ExtractTextPlugin({filename: 'style.css'})

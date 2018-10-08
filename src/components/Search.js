@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import axios from 'axios';
+const prune = require('json-prune');
 
 
 
@@ -30,6 +31,9 @@ class Search extends Component {
       walletAddress: e.target.value,
     })
   }
+  addToList(data) {
+
+  }
   searchBlockchain(e) {
     e.preventDefault()
     const length = this.state.walletAddress.length;
@@ -40,11 +44,12 @@ class Search extends Component {
       })
       axios({
         method: 'GET',
-        headers: {"Access-Control-Allow-Origin": "localhost:8080"},
-        url: `https://blockchain.info/rawaddr/${address}?cors=true`
+        url: `https://chain.api.btc.com/v3/address/${address}/tx`
       })
       .then(data => {
-        console.log(data);
+        const nData = data.data.data.list;
+        let tx = prune(nData);
+        console.log(tx);
       })
       .catch(err => {
         console.log(err);
