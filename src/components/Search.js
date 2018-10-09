@@ -2,9 +2,6 @@
 import React, { Component } from 'react';
 import { FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import axios from 'axios';
-const prune = require('json-prune');
-
-
 
 class Search extends Component {
   constructor() {
@@ -31,8 +28,29 @@ class Search extends Component {
       walletAddress: e.target.value,
     })
   }
-  addToList(data) {
-
+  addToList(list) {
+    let txList = [];
+    list.map(block => {
+      const inputs = block.inputs;
+      const outputs = block.outputs;
+      for (let i = 0; i < 0; i++) {
+        const address = inputs[i].prev_addresses[0];
+        if (txList.includes(address) === false) {
+          txList.push(address);
+        }
+      }
+      for (let d = 0; d < outputs.length; d++) {
+        const address = outputs[d].addresses[0];
+        if (txList.includes(address) === false) {
+          txList.push(address);
+        }
+      }
+    })
+    this.setState({
+      dataLoading: false,
+      dataLoaded: true,
+      transactions: txList
+    })
   }
   searchBlockchain(e) {
     e.preventDefault()
@@ -41,15 +59,15 @@ class Search extends Component {
       const address = this.state.walletAddress;
       this.setState({
         dataLoading: true,
+        dataLoaded: false
       })
       axios({
         method: 'GET',
         url: `https://chain.api.btc.com/v3/address/${address}/tx`
       })
       .then(data => {
-        const nData = data.data.data.list;
-        let tx = prune(nData);
-        console.log(tx);
+        const txList = data.data.data.list;
+        this.addToList(txList);
       })
       .catch(err => {
         console.log(err);
@@ -60,6 +78,7 @@ class Search extends Component {
     }
   }
   render() {
+    console.log(this.state.transactions);
     return (
       <div className="Search">
         <form onSubmit={this.searchBlockchain}>
