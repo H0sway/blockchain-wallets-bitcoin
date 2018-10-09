@@ -7,8 +7,12 @@ $white: #ffffff;
 $black: #000000;
 $dark-grey: #494c4c;
 $light-grey: #bcbcbc;
-$default-blue: #003bb2;
+$default-blue: #002aa6;
 $default-green: #00b200;
+
+body {
+  background-color: $dark-grey;
+}
 
 .navbar {
   border-radius: 0;
@@ -44,29 +48,48 @@ $default-green: #00b200;
 }
 
 .Search {
-  background-color: $light-grey;
-  border-bottom: 2px solid $dark-grey;
-  padding: 20px;
+  padding: 0;
+
+  form {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: $light-grey;
+    border-bottom: 2px solid $white;
+
+    .form-group {
+      text-align: left;
+    }
+
+    button {
+      color: $black;
+      background-color: $white;
+      padding: 0.4em 0.8em;
+      border: 0.15em solid $default-green;
+      border-radius: 12%;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: $default-green;
+      color: $white;
+    }
+  }
 }
 
-form {
-  max-width: 50em;
+.Addresses {
+  padding: 20px;
+  max-width: 400px;
   margin: 0 auto;
 
-  .form-group {
+  h4 {
+    color: $primary-color;
+  }
+  tr {
+    color: $primary-color;
     text-align: left;
+    border-color: $light-grey;
+    background-color: $black;
   }
-
-  button {
-    color: $black;
-    background-color: $white;
-    padding: 0.4em 0.8em;
-    border: 0.15em solid $default-green;
-    border-radius: 12%;
-    transition: 0.2s;
-  }
-  button:hover {
-    background-color: $default-green;
-    color: $white;
+  tr:hover {
+    background-color: #00000089;
   }
 }

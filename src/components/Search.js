@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import { FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import axios from 'axios';
 
+// Import the addresses component
+import Addresses from './Addresses';
+
 class Search extends Component {
   constructor() {
     super();
     this.state = {
       walletAddress: "",
-      dataLoading: false,
       dataLoaded: false,
       transactions: [],
       error: false
@@ -47,7 +49,6 @@ class Search extends Component {
       }
     })
     this.setState({
-      dataLoading: false,
       dataLoaded: true,
       transactions: txList
     })
@@ -57,10 +58,6 @@ class Search extends Component {
     const length = this.state.walletAddress.length;
     if (length < 36 && length > 25) {
       const address = this.state.walletAddress;
-      this.setState({
-        dataLoading: true,
-        dataLoaded: false
-      })
       axios({
         method: 'GET',
         url: `https://chain.api.btc.com/v3/address/${address}/tx`
@@ -93,6 +90,7 @@ class Search extends Component {
             <button>Search!</button>
           </FormGroup>
         </form>
+        {this.state.dataLoaded ? <Addresses tx={this.state.transactions}/> : ''}
       </div>
     )
   }
