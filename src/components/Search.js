@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import axios from 'axios';
 
+// Import the addresses component
+import Addresses from './Addresses';
+
 class Search extends Component {
   constructor() {
     super();
@@ -93,6 +96,7 @@ class Search extends Component {
             <button>Search!</button>
           </FormGroup>
         </form>
+        {this.state.dataloaded ? <Addresses tx={this.state.transactions}/> : ''}
       </div>
     )
   }
