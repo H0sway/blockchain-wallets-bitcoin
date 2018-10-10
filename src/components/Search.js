@@ -63,8 +63,14 @@ class Search extends Component {
         url: `https://chain.api.btc.com/v3/address/${address}/tx`
       })
       .then(data => {
-        const txList = data.data.data.list;
-        this.addToList(txList);
+        console.log(data);
+        if (data.data.data) {
+          const txList = data.data.data.list;
+          this.addToList(txList);
+        }
+        else {
+          alert("We couldn't find that address");
+        }
       })
       .catch(err => {
         console.log(err);
