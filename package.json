@@ -27,7 +27,8 @@
   "homepage": "https://github.com/H0sway/blockchain-wallets-bitcoin#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "^6.0.0",
+    "dotenv": "^6.1.0",
+    "dotenv-webpack": "^1.5.7",
     "json-prune": "^1.1.0",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",

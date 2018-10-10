@@ -1,7 +1,8 @@
 // Import dependencies
 const path = require('path');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
   entry: './src/index.js',
@@ -33,7 +34,8 @@ const config = {
       template: "./index.html",
       filename: "./index.html"
     }),
-    new ExtractTextPlugin({filename: 'style.css'})
+    new ExtractTextPlugin({filename: 'style.css'}),
+    new Dotenv()
   ]
 };
 
