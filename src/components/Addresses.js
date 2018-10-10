@@ -3,20 +3,17 @@
 import React from 'react';
 import { Table }from 'react-bootstrap';
 
+// Import the single address component
+import Address from './Address';
+
 const Addresses = (props) => {
   return (
     <div className="Addresses">
       <h4>List of Addresses </h4>
       <Table bordered condensed responsive>
-        <tbody>
-          {props.tx.map(address => {
-            return (
-              <tr key={props.tx.indexOf(address)}>
-                <td>{address}</td>
-              </tr>
-            )
-          })}
-        </tbody>
+        <Address
+          tx={props.tx}
+        />
       </Table>
     </div>
   )
