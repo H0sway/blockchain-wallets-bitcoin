@@ -1,5 +1,6 @@
 // Displays whether or not an address is connected to a scam.
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Scam extends Component {
   constructor(props) {
@@ -9,6 +10,34 @@ class Scam extends Component {
       dataLoaded: false,
       isScam: false
     }
+    this.searchBlacklist = this.searchBlacklist.bind(this);
+  }
+  searchBlacklist() {
+    const address = this.props.address;
+    this.setState({
+      loading: true
+    })
+    axios({
+      method: 'GET',
+      url: ``,
+      withCredentials: true,
+      headers: {
+	       'Access-Control-Allow-Origin': '*',
+	    },
+    })
+    .then(data => {
+      console.log(data);
+      this.setState({
+        loading: false,
+        dataLoaded: true
+      })
+    })
+    .catch(err => {
+      console.log(err);
+      this.setState({
+        loading: false
+      })
+    })
   }
   showScam() {
     if (this.state.dataLoaded) {
@@ -30,7 +59,7 @@ class Scam extends Component {
     }
     else {
       return (
-        <button>CHECK</button>
+        <button onClick={this.searchBlacklist}>CHECK</button>
       )
     }
   }
