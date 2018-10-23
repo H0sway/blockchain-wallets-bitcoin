@@ -4,10 +4,12 @@
 ## Introduction
 The purpose of this web application is to allow users a quick and easy way to see if a specific bitcoin wallet has had any interactions with "blacklisted" wallets. Users can input a bitcoin wallet and the app will find all transactions that wallet has made and cross-reference them with a list of "blacklisted" wallets. If any of the wallet addresses match then the user will be notified and shown which wallet(s) matched.
 
-## Build
-This app has been built using ReactJS on the front-end with a NodeJS server.
+You can find the deployed app here: https://ancient-beach-14052.herokuapp.com/
 
-While still in development, the finished product will pull from 3rd party APIs for data on a wallet's transactions and a list of blacklisted wallets. Future goals include adding the blockchain to the server and connecting it to the front-end as well as potentially adding a crowdsourced list of blacklisted bitcoin addresses. When the build for this app changes, so will this section.
+## Build
+This app has been built using NodeJS with ReactJS on the front-end and an ExpressJS server. Webpack was used as a bundler.
+
+Data was pulled from two third-party APIs. Address transaction history was taken from https://btc.com/. The wallet blacklist used is from https://bitcoinwhoswho.com/.
 
 ## Installing and Running
 1. Make sure you have Node and a package manager installed (I used npm).
