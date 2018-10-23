@@ -22,6 +22,9 @@
   ],
   "author": "Joshua K. Russell",
   "license": "ISC",
+  "engines": {
+    "node": "10.12.0"
+  },
   "bugs": {
     "url": "https://github.com/H0sway/blockchain-wallets-bitcoin/issues"
   },
