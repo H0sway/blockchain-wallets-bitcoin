@@ -11,6 +11,12 @@ const Addresses = (props) => {
     <div className="Addresses">
       <h4>List of Addresses </h4>
       <Table bordered condensed responsive>
+        <thead>
+          <tr>
+            <th>Address</th>
+            <th>Scam?</th>
+          </tr>
+        </thead>
         <Address
           tx={props.tx}
         />

@@ -67,8 +67,9 @@ class Scam extends Component {
       )
     }
     else {
+      this.searchBlacklist();
       return (
-        <button onClick={this.searchBlacklist}>CHECK</button>
+        <p>Loading...</p>
       )
     }
   }
