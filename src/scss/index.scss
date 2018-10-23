@@ -94,6 +94,13 @@ body {
   }
   .scam {
     text-align: center;
-    color: $black;
+
+    button {
+      color: $black;
+    }
+    p {
+      color: $white;
+      margin-bottom: 0;
+    }
   }
 }

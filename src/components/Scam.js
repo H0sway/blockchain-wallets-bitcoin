@@ -17,20 +17,29 @@ class Scam extends Component {
     this.setState({
       loading: true
     })
+    console.log('Searching' + address);
     axios({
-      method: 'GET',
-      url: ``,
-      withCredentials: true,
-      headers: {
-	       'Access-Control-Allow-Origin': '*',
-	    },
+      method: 'POST',
+      url: `/api/scam/`,
+      data: {
+        address: address
+      }
     })
     .then(data => {
       console.log(data);
-      this.setState({
-        loading: false,
-        dataLoaded: true
-      })
+      if (data.data.scams) {
+        this.setState({
+          loading: false,
+          dataLoaded: true,
+          isScame: true
+        })
+      }
+      else {
+        this.setState({
+          loading: false,
+          dataLoaded: true
+        })
+      }
     })
     .catch(err => {
       console.log(err);
