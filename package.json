@@ -4,8 +4,8 @@
   "description": "Check to see if a bitcoin wallet has had transactions with a blacklisted wallet.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "dev": "webpack --watch --mode development",
+    "start": "node server.js",
+    "dev": "nodemon server.js && webpack --watch --mode development",
     "build": "webpack --mode production"
   },
   "repository": {
