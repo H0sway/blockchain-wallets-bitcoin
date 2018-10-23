@@ -14,7 +14,7 @@ const Addresses = (props) => {
         <thead>
           <tr>
             <th>Address</th>
-            <th>Scam?</th>
+            <th className="scam">Scam?</th>
           </tr>
         </thead>
         <Address
