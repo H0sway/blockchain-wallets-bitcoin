@@ -10,7 +10,6 @@ scamController.search = (req,res) => {
     url: url
   })
   .then(data => {
-    console.log(data.data)
     res.json({
       message: "Success",
       data: data.data.scams

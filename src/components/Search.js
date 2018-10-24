@@ -87,6 +87,14 @@ class Search extends Component {
     console.log(this.state.transactions);
     return (
       <div className="Search">
+
+        <div className="instructions">
+          <h3>Instructions</h3>
+          <p>
+            Input the bitcoin address you wish to search into the form below and click search.
+          </p>
+        </div>
+
         <form onSubmit={this.searchBlockchain}>
           <FormGroup validationState={this.validateAddress()}>
             <ControlLabel>Wallet Address</ControlLabel>

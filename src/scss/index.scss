@@ -3,26 +3,34 @@
 
 /* Define variables */
 $primary-color: #ffc33b;
+$primary-hover: #ffdb3b;
 $white: #ffffff;
 $black: #000000;
 $warning: #ff5b41;
 $dark-grey: #494c4c;
 $light-grey: #bcbcbc;
 $default-blue: #002aa6;
+$light-blue: #1992ff;
 $default-green: #00b200;
 
 body {
   background-color: $dark-grey;
 }
 
-.navbar {
-  border-radius: 0;
+.App {
+  .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 
-.navbar-default {
-  background-color: $black;
-  border: none;
-  margin: 0;
+.navbar {
+  background: $black;
+  border-bottom: .05px solid $white;
+  border-radius: 0;
+  padding: 0 2em .1em 2em;
+  margin-bottom: 0;
 
   .navbar-brand {
     color: $primary-color;
@@ -30,31 +38,42 @@ body {
   .navbar-brand:hover {
     color: $primary-color;
   }
-  .navbar-nav {
-    li {
-      a {
-        color: $primary-color
+  .navbar-collapse {
+
+    ul {
+      li {
+        a {
+          color: $primary-color;
+          background-color: $black;
+          text-decoration: none;
+        }
+        a:hover {
+          color: $primary-hover;
+          background-color: $black;
+        }
       }
-      a:hover {
-        color: $white;
-      }
-    }
-    .active {
-      a {
-        color: $white;
-        background-color: $black;
+      .active {
+        a {
+          color: $primary-color;
+          background-color: $black;
+          text-decoration: none;
+        }
+        a:hover {
+          color: $primary-hover;
+          background-color: $black;
+        }
       }
     }
   }
 }
 
 .Search {
-  padding: 0;
+  padding: 5px 0 0 0;
+  background-color: $light-grey;
 
   form {
-    padding: 20px;
+    padding: 10px;
     margin: 0 auto;
-    background-color: $light-grey;
     border-bottom: 2px solid $white;
 
     .form-group {
@@ -77,36 +96,106 @@ body {
 }
 
 .Addresses {
-  padding: 20px;
-  max-width: 450px;
+  max-width: 100%;
   margin: 0 auto;
+  border-bottom: 2px solid $white;
+  background-color: $dark-grey;
 
-  h4 {
-    color: $primary-color;
-  }
-  tr {
-    color: $primary-color;
-    text-align: left;
-    border-color: $light-grey;
+  .row {
     background-color: $black;
-  }
-  tr:hover {
-    background-color: #00000089;
-  }
-  .scam {
-    text-align: center;
+    padding: .2em 0 .6em 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
 
-    button {
-      color: $white;
-      background: #00000000;
-      border-color: #00000000;
+    h4 {
+      color: $primary-color;
     }
-    p {
-      color: $white;
-      margin-bottom: 0;
+    .details {
+      padding-bottom: .6em;
+      margin: 0 auto;
+
+      article {
+        text-align: left;
+        color: $light-blue;
+        border: .1em solid $white;
+        padding: .5em;
+      }
+      .yes {
+        color: $warning;
+      }
     }
-    .blacklisted {
-      color: $warning;
+    .address-table {
+      margin: 0 auto;
+
+      .table {
+        max-width: 20em;
+        margin: 0 auto;
+
+        tr {
+          color: $primary-color;
+          text-align: left;
+          border-color: $light-grey;
+          background-color: $black;
+        }
+        tr:hover {
+          background-color: #00000089;
+        }
+
+        .scam {
+          text-align: center;
+      }
+    }
+      button {
+        color: $white;
+        background: #00000000;
+        border-color: #00000000;
+      }
+      p {
+        color: $white;
+        margin-bottom: 0;
+      }
+      .blacklisted {
+        color: $warning;
+      }
+    }
+  }
+}
+
+.About {
+  background-color: $light-grey;
+  border-bottom: 2px solid $white;
+  padding: .5em 1em 1em 1em;
+
+  h1 {
+    color: $black;
+    border-bottom: .05em solid $black;
+  }
+  .about-us {
+    text-align: left;
+    color: $dark-grey;
+  }
+  h3 {
+    text-align: center;
+    color: $black;
+    border-top: .1em solid $black;
+    padding-top: .5em
+  }
+  .btn-toolbar {
+    padding-top: 1em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+
+    .btn-default {
+      background-color: $black;
+      color: $primary-color;
     }
   }
 }

@@ -28,7 +28,6 @@ class Scam extends Component {
     })
     .then(data => {
       if (data.data.data.length) {
-        console.log("Running if");
         this.setState({
           loading: false,
           dataLoaded: true,
@@ -37,7 +36,6 @@ class Scam extends Component {
         })
       }
       else {
-        console.log("Running else");
         this.setState({
           loading: false,
           dataLoaded: true
