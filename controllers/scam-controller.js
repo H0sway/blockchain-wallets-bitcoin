@@ -5,15 +5,15 @@ const scamController = {};
 
 scamController.search = (req,res) => {
   const url = `https://bitcoinwhoswho.com/api/scam/${process.env.api_key}?address=${req.body.address}`
-  console.log(url);
   axios({
     method: 'GET',
     url: url
   })
   .then(data => {
+    console.log(data.data)
     res.json({
       message: "Success",
-      data: data
+      data: data.data.scams
     })
   })
   .catch(err => {

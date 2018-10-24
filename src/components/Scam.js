@@ -8,16 +8,17 @@ class Scam extends Component {
     this.state = {
       loading: false,
       dataLoaded: false,
-      isScam: false
+      isScam: false,
+      checked: false,
+      scams: []
     }
-    this.searchBlacklist = this.searchBlacklist.bind(this);
+    this.checkScam = this.checkScam.bind(this);
   }
-  searchBlacklist() {
+  componentDidMount() {
     const address = this.props.address;
     this.setState({
       loading: true
     })
-    console.log('Searching' + address);
     axios({
       method: 'POST',
       url: `/api/scam/`,
@@ -26,20 +27,11 @@ class Scam extends Component {
       }
     })
     .then(data => {
-      console.log(data);
-      if (data.data.scams) {
-        this.setState({
-          loading: false,
-          dataLoaded: true,
-          isScame: true
-        })
-      }
-      else {
-        this.setState({
-          loading: false,
-          dataLoaded: true
-        })
-      }
+      this.setState({
+        loading: false,
+        dataLoaded: true,
+        scams: data.data.data
+      })
     })
     .catch(err => {
       console.log(err);
@@ -48,16 +40,34 @@ class Scam extends Component {
       })
     })
   }
+  checkScam() {
+    if (this.state.scams.length) {
+      this.setState({
+        checked: true,
+        isScam: true
+      })
+    }
+    else {
+      this.setState({
+        checked: true
+      })
+    }
+  }
   showScam() {
     if (this.state.dataLoaded) {
-      if (this.state.isScam) {
+      if (this.state.isScam && this.state.checked) {
         return (
-          <p>YES!</p>
+          <p className="blacklisted">YES!</p>
+        )
+      }
+      if (this.state.checked) {
+        return (
+          <p>No</p>
         )
       }
       else {
         return (
-        <p>No</p>
+        <button onClick={this.checkScam}>CHECK</button>
         )
       }
     }
@@ -67,7 +77,6 @@ class Scam extends Component {
       )
     }
     else {
-      this.searchBlacklist();
       return (
         <p>Loading...</p>
       )
