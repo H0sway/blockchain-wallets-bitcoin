@@ -9,10 +9,19 @@ $warning: #ff5b41;
 $dark-grey: #494c4c;
 $light-grey: #bcbcbc;
 $default-blue: #002aa6;
+$light-blue: #1992ff;
 $default-green: #00b200;
 
 body {
   background-color: $dark-grey;
+}
+
+.App {
+  .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -77,39 +86,72 @@ body {
 }
 
 .Addresses {
-  padding: 20px;
-  max-width: 450px;
+  max-width: 100%;
   margin: 0 auto;
+  border-bottom: 2px solid $white;
+  background-color: $dark-grey;
 
-  .table {
-    max-width: 20em;
-  }
-  h4 {
-    color: $primary-color;
-  }
-  tr {
-    color: $primary-color;
-    text-align: left;
-    border-color: $light-grey;
+  .row {
     background-color: $black;
-  }
-  tr:hover {
-    background-color: #00000089;
-  }
-  .scam {
-    text-align: center;
+    padding: .2em 0 .6em 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
 
-    button {
-      color: $white;
-      background: #00000000;
-      border-color: #00000000;
+    h4 {
+      color: $primary-color;
     }
-    p {
-      color: $white;
-      margin-bottom: 0;
+    .details {
+      padding-bottom: .6em;
+      margin: 0 auto;
+
+      article {
+        text-align: left;
+        color: $light-blue;
+        border: .1em solid $white;
+        padding: .5em;
+      }
+      .yes {
+        color: $warning;
+      }
     }
-    .blacklisted {
-      color: $warning;
+    .address-table {
+      margin: 0 auto;
+
+      .table {
+        max-width: 20em;
+        margin: 0 auto;
+
+        tr {
+          color: $primary-color;
+          text-align: left;
+          border-color: $light-grey;
+          background-color: $black;
+        }
+        tr:hover {
+          background-color: #00000089;
+        }
+
+        .scam {
+          text-align: center;
+      }
+    }
+      button {
+        color: $white;
+        background: #00000000;
+        border-color: #00000000;
+      }
+      p {
+        color: $white;
+        margin-bottom: 0;
+      }
+      .blacklisted {
+        color: $warning;
+      }
     }
   }
 }

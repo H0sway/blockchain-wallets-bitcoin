@@ -1,5 +1,6 @@
 // Import dependencies
 import React, { Component } from 'react';
+import { Grid } from 'react-bootstrap';
 
 // Import components
 import Header from './components/Header';
@@ -9,8 +10,10 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Header />
-          <Search />
+          <Grid>
+            <Header />
+            <Search />
+          </Grid>
         </div>
     )
   }
