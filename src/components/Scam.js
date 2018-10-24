@@ -19,7 +19,6 @@ class Scam extends Component {
     this.setState({
       loading: true
     })
-    console.log('Searching' + address);
     axios({
       method: 'POST',
       url: `/api/scam/`,
@@ -28,7 +27,6 @@ class Scam extends Component {
       }
     })
     .then(data => {
-      console.log(data.data.data);
       this.setState({
         loading: false,
         dataLoaded: true,
@@ -43,7 +41,6 @@ class Scam extends Component {
     })
   }
   checkScam() {
-    console.log(this.state.scams)
     if (this.state.scams.length) {
       this.setState({
         checked: true,
@@ -57,7 +54,6 @@ class Scam extends Component {
     }
   }
   showScam() {
-    console.log(this.props.address + this.state.isScam);
     if (this.state.dataLoaded) {
       if (this.state.isScam && this.state.checked) {
         return (

@@ -5,6 +5,7 @@
 $primary-color: #ffc33b;
 $white: #ffffff;
 $black: #000000;
+$warning: #ff5b41;
 $dark-grey: #494c4c;
 $light-grey: #bcbcbc;
 $default-blue: #002aa6;
@@ -94,13 +95,18 @@ body {
   }
   .scam {
     text-align: center;
-    
+
     button {
-      color: $black;
+      color: $white;
+      background: #00000000;
+      border-color: #00000000;
     }
     p {
       color: $white;
       margin-bottom: 0;
+    }
+    .blacklisted {
+      color: $warning;
     }
   }
 }
