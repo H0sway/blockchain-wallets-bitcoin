@@ -27,11 +27,22 @@ class Scam extends Component {
       }
     })
     .then(data => {
-      this.setState({
-        loading: false,
-        dataLoaded: true,
-        scams: data.data.data
-      })
+      if (data.data.data.length) {
+        console.log("Running if");
+        this.setState({
+          loading: false,
+          dataLoaded: true,
+          isScam: true,
+          scams: data.data.data
+        })
+      }
+      else {
+        console.log("Running else");
+        this.setState({
+          loading: false,
+          dataLoaded: true
+        })
+      }
     })
     .catch(err => {
       console.log(err);
@@ -55,21 +66,21 @@ class Scam extends Component {
   }
   showScam() {
     if (this.state.dataLoaded) {
-      if (this.state.isScam && this.state.checked) {
+      if (this.state.isScam) {
         return (
           <p className="blacklisted">YES!</p>
         )
       }
-      if (this.state.checked) {
+      else {
         return (
           <p>No</p>
         )
       }
-      else {
-        return (
-        <button onClick={this.checkScam}>CHECK</button>
-        )
-      }
+      // else {
+      //   return (
+      //   <button onClick={this.checkScam}>CHECK</button>
+      //   )
+      // }
     }
     if (this.state.loading) {
       return (
