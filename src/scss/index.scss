@@ -49,12 +49,12 @@ body {
 }
 
 .Search {
-  padding: 0;
+  padding: 5px 0 0 0;
+  background-color: $light-grey;
 
   form {
-    padding: 20px;
+    padding: 10px;
     margin: 0 auto;
-    background-color: $light-grey;
     border-bottom: 2px solid $white;
 
     .form-group {
@@ -81,6 +81,9 @@ body {
   max-width: 450px;
   margin: 0 auto;
 
+  .table {
+    max-width: 20em;
+  }
   h4 {
     color: $primary-color;
   }

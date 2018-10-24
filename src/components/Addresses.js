@@ -10,7 +10,7 @@ const Addresses = (props) => {
   return (
     <div className="Addresses">
       <h4>List of Addresses </h4>
-      <Table bordered condensed responsive>
+      <Table bordered condensed>
         <thead>
           <tr>
             <th>Address</th>
