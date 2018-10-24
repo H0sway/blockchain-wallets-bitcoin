@@ -3,6 +3,7 @@
 
 /* Define variables */
 $primary-color: #ffc33b;
+$primary-hover: #ffdb3b;
 $white: #ffffff;
 $black: #000000;
 $warning: #ff5b41;
@@ -25,13 +26,11 @@ body {
 }
 
 .navbar {
+  background: $black;
+  border-bottom: .05px solid $white;
   border-radius: 0;
-}
-
-.navbar-default {
-  background-color: $black;
-  border: none;
-  margin: 0;
+  padding: 0 2em .1em 2em;
+  margin-bottom: 0;
 
   .navbar-brand {
     color: $primary-color;
@@ -39,19 +38,27 @@ body {
   .navbar-brand:hover {
     color: $primary-color;
   }
-  .navbar-nav {
-    li {
-      a {
-        color: $primary-color
+  .navbar-collapse {
+
+    ul {
+      li {
+        a {
+          color: $primary-color;
+        }
+        a:hover {
+          color: $primary-hover;
+        }
       }
-      a:hover {
-        color: $white;
-      }
-    }
-    .active {
-      a {
-        color: $white;
-        background-color: $black;
+      .active {
+
+        a {
+          color: $primary-color;
+          background-color: $dark-grey;
+        }
+        a:hover {
+          background-color: $dark-grey;
+          color: $primary-hover;
+        }
       }
     }
   }
