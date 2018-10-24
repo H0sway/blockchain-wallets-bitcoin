@@ -27,6 +27,7 @@ class Scam extends Component {
       }
     })
     .then(data => {
+      console.log(data);
       this.setState({
         loading: false,
         dataLoaded: true,
