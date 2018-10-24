@@ -54,7 +54,10 @@ class Search extends Component {
     })
   }
   searchBlockchain(e) {
-    e.preventDefault()
+    e.preventDefault();
+    this.setState({
+      dataLoaded: false
+    })
     const length = this.state.walletAddress.length;
     if (length < 36 && length > 25) {
       const address = this.state.walletAddress;
