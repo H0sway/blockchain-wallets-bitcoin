@@ -16,7 +16,7 @@ class App extends Component {
           <Grid>
             <Header />
             <Route exact path="/" component={Search} />
-            <Route exact path="about" component={About} />
+            <Route exact path="/about" component={About} />
           </Grid>
         </div>
       </Router>

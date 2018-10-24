@@ -44,20 +44,23 @@ body {
       li {
         a {
           color: $primary-color;
+          background-color: $black;
+          text-decoration: none;
         }
         a:hover {
           color: $primary-hover;
+          background-color: $black;
         }
       }
       .active {
-
         a {
           color: $primary-color;
-          background-color: $dark-grey;
+          background-color: $black;
+          text-decoration: none;
         }
         a:hover {
-          background-color: $dark-grey;
           color: $primary-hover;
+          background-color: $black;
         }
       }
     }
@@ -159,6 +162,40 @@ body {
       .blacklisted {
         color: $warning;
       }
+    }
+  }
+}
+
+.About {
+  background-color: $light-grey;
+  border-bottom: 2px solid $white;
+  padding: .5em 1em 1em 1em;
+
+  h1 {
+    color: $black;
+    border-bottom: .05em solid $black;
+  }
+  .about-us {
+    text-align: left;
+    color: $dark-grey;
+  }
+  h3 {
+    text-align: center;
+    color: $black;
+    border-top: .1em solid $black;
+    padding-top: .5em
+  }
+  .btn-toolbar {
+    padding-top: 1em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+
+    .btn-default {
+      background-color: $black;
+      color: $primary-color;
     }
   }
 }
