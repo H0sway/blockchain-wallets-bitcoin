@@ -62,13 +62,15 @@ class Search extends Component {
     if (length < 36 && length > 25) {
       const address = this.state.walletAddress;
       axios({
-        method: 'GET',
-        url: `https://chain.api.btc.com/v3/address/${address}/tx`
+        method: 'POST',
+        url: '/api/tx',
+        data: {
+          address: address
+        }
       })
       .then(data => {
-        console.log(data);
-        if (data.data.data) {
-          const txList = data.data.data.list;
+        if (data.data) {
+          const txList = data.data.data;
           this.addToList(txList);
         }
         else {
@@ -84,7 +86,6 @@ class Search extends Component {
     }
   }
   render() {
-    console.log(this.state.transactions);
     return (
       <div className="Search">
 
