@@ -4,7 +4,7 @@ const axios = require('axios');
 const scamController = {};
 
 scamController.search = (req,res) => {
-  const url = `https://bitcoinwhoswho.com/api/scam/${process.env.api_key}?address=${req.body.address}`
+  const url = `https://bitcoinwhoswho.com/api/scam/${process.env.api_key}?address=${req.body.address}`;
   axios({
     method: 'GET',
     url: url
