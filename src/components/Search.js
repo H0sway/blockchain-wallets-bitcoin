@@ -37,14 +37,20 @@ class Search extends Component {
       const outputs = block.outputs;
       for (let i = 0; i < 0; i++) {
         const address = inputs[i].prev_addresses[0];
-        if (txList.includes(address) === false) {
-          txList.push(address);
+        const length = address.length;
+        if (length < 36 && length > 25) {
+          if (txList.includes(address) === false) {
+            txList.push(address);
+          }
         }
       }
       for (let d = 0; d < outputs.length; d++) {
         const address = outputs[d].addresses[0];
-        if (txList.includes(address) === false) {
-          txList.push(address);
+        const length = address.length;
+        if (length < 36 && length > 25) {
+          if (txList.includes(address) === false) {
+            txList.push(address);
+          }
         }
       }
     })
