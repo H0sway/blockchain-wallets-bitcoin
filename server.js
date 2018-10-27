@@ -15,6 +15,7 @@ app.use(cors());
 app.use(express.static('build'));
 
 // Routes
+app.use('/api/tx', require('./routes/btc-routes'));
 app.use('/api/scam', require('./routes/scam-routes'));
 app.get('*', (req,res) => {
   res.sendFile(path.join(__dirname + '/build/index.html'))
