@@ -37,14 +37,20 @@ class Search extends Component {
       const outputs = block.outputs;
       for (let i = 0; i < 0; i++) {
         const address = inputs[i].prev_addresses[0];
-        if (txList.includes(address) === false) {
-          txList.push(address);
+        const length = address.length;
+        if (length < 36 && length > 25) {
+          if (txList.includes(address) === false) {
+            txList.push(address);
+          }
         }
       }
       for (let d = 0; d < outputs.length; d++) {
         const address = outputs[d].addresses[0];
-        if (txList.includes(address) === false) {
-          txList.push(address);
+        const length = address.length;
+        if (length < 36 && length > 25) {
+          if (txList.includes(address) === false) {
+            txList.push(address);
+          }
         }
       }
     })
@@ -62,13 +68,15 @@ class Search extends Component {
     if (length < 36 && length > 25) {
       const address = this.state.walletAddress;
       axios({
-        method: 'GET',
-        url: `https://chain.api.btc.com/v3/address/${address}/tx`
+        method: 'POST',
+        url: '/api/tx',
+        data: {
+          address: address
+        }
       })
       .then(data => {
-        console.log(data);
-        if (data.data.data) {
-          const txList = data.data.data.list;
+        if (data.data) {
+          const txList = data.data.data;
           this.addToList(txList);
         }
         else {
@@ -84,7 +92,6 @@ class Search extends Component {
     }
   }
   render() {
-    console.log(this.state.transactions);
     return (
       <div className="Search">
 

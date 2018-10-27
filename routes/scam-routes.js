@@ -5,4 +5,4 @@ const scamController = require('../controllers/scam-controller');
 
 scamRouter.post('/', scamController.search);
 
-module.exports = scamRouter
+module.exports = scamRouter;
