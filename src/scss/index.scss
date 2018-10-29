@@ -1,7 +1,10 @@
 /* Import reset scss file */
 @import 'reset';
 
-/* Define variables */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css?family=Mali|Source+Serif+Pro|Open+Sans|Ubuntu');
+
+/* Define color variables */
 $primary-color: #ffc33b;
 $primary-hover: #ffdb3b;
 $white: #ffffff;
@@ -12,6 +15,12 @@ $light-grey: #bcbcbc;
 $default-blue: #002aa6;
 $light-blue: #1992ff;
 $default-green: #00b200;
+
+/* Define font variables */
+$primary-font: 'Ubuntu', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$serif: 'Source Serif Pro', serif;
+$cursive: 'Mali', cursive;
 
 body {
   background-color: $dark-grey;
@@ -27,6 +36,7 @@ body {
 
 .navbar {
   background: $black;
+  font-family: $primary-font;
   border-bottom: .05px solid $white;
   border-radius: 0;
   padding: 0 2em .1em 2em;
@@ -71,10 +81,14 @@ body {
   padding: 5px 0 0 0;
   background-color: $light-grey;
 
+  h3 {
+    font-family: $primary-font;
+  }
   form {
     padding: 10px;
     margin: 0 auto;
     border-bottom: 2px solid $white;
+    font-family: $open-sans;
 
     .form-group {
       text-align: left;
@@ -113,6 +127,8 @@ body {
     flex-wrap: wrap;
 
     h4 {
+      font-family: $primary-font;
+      font-size: 1.6em;
       color: $primary-color;
     }
     .details {
@@ -121,7 +137,10 @@ body {
 
       article {
         text-align: left;
+        font-family: $open-sans;
+        max-width: 250px;
         color: $light-blue;
+        margin: 0 auto;
         border: .1em solid $white;
         padding: .5em;
       }
@@ -138,6 +157,7 @@ body {
 
         tr {
           color: $primary-color;
+          font-family: $serif;
           text-align: left;
           border-color: $light-grey;
           background-color: $black;
@@ -173,20 +193,24 @@ body {
 
   h1 {
     color: $black;
+    font-family: $primary-font;
+    margin-top: 0;
+    padding-bottom: .3em;
     border-bottom: .05em solid $black;
   }
   .about-us {
     text-align: left;
     color: $dark-grey;
+    font-family: $open-sans;
   }
   h3 {
     text-align: center;
     color: $black;
+    font-family: $cursive;
     border-top: .1em solid $black;
     padding-top: .5em
   }
   .btn-toolbar {
-    padding-top: 1em;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -195,7 +219,11 @@ body {
 
     .btn-default {
       background-color: $black;
+      font-family: $serif;
       color: $primary-color;
+    }
+    .btn-default:hover {
+      color: $primary-hover;
     }
   }
 }
