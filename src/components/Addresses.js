@@ -13,7 +13,7 @@ const Addresses = (props) => {
         <Col className="details" xs={12} md={4}>
           <h4>Details</h4>
           <article>
-            On the right you'll see a table with a list of addresses has made transactions with according to <a href="https://btc.com/" target="_blank" rel="noopener noreferrer">BTC.com</a>'s API. We then check <a href="https://bitcoinwhoswho.com/" target="_blank" rel="noopener noreferrer">BitcoinWhosWho</a>'s blacklist of wallets. If there's a scam associated with that wallet, you'll see a red <strong className="yes">YES!</strong> in the "Scam?" column.
+            On the right you'll see a table with a list of addresses has made transactions with according to <a href="https://btc.com/" target="_blank" rel="noopener noreferrer">BTC.com</a>'s API. We then check <a href="https://bitcoinwhoswho.com/" target="_blank" rel="noopener noreferrer">BitcoinWhosWho</a>'s blacklist of wallets. If there's a scam associated with that wallet, you'll see a red <strong className="yes">YES!</strong> in the "Scam?" column. Click it for more details.
           </article>
         </Col>
         <Col className="address-table" xs={12} md={8}>
