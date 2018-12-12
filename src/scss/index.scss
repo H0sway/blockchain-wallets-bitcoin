@@ -181,7 +181,59 @@ body {
       }
       .blacklisted {
         color: $warning;
+        cursor: pointer;
       }
+    }
+  }
+}
+
+.modal-content {
+  background: $black;
+
+  h4 {
+    font-family: $primary-font;
+    color: $primary-color;
+  }
+  p {
+    color: $light-blue;
+    font-size: 1.2em;
+    font-family: $serif;
+  }
+  .scam-info {
+    text-align: left;
+    margin: .2em 0 .8em 0;
+    border-top: .01em solid $white;
+    padding-top: .6em;
+
+    ul {
+      padding: 0;
+    }
+    li {
+      text-align: left;
+      margin: 0;
+      display: block;
+      color: $white;
+      font-family: $open-sans;
+
+      strong {
+        color: $primary-color;
+      }
+    }
+  }
+  .modal-footer {
+    text-align: center;
+
+    button {
+      background: $warning;
+      border: .2em solid $dark-grey;
+      border-radius: 12%;
+      color: $white;
+      font-family: $open-sans;
+      font-size: 1em;
+      padding: .6em;
+    }
+    button:hover {
+      background: #d9534f;
     }
   }
 }

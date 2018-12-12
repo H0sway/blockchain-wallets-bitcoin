@@ -26,17 +26,32 @@ class ScamList extends Component {
       const scams = this.state.scams;
       return (
       scams.map(scam => {
-        console.log(scam);
-        return (
-          <div className="scam-info" key={scams.indexOf(scam)}>
-            <ul>
-              <li>Name: {scam.scam_name}</li>
-              <li>Description: {scam.scam_details}</li>
-              <li>URL: {scam.url}</li>
-              <li>Date Reported: {scam.reported_date}</li>
-            </ul>
-          </div>
-        )
+        const key = scams.indexOf(scam);
+
+        if (key == 0) {
+          return (
+            <div className="scam-info" key={key}>
+              <ul>
+                <li><strong>Name:</strong> {scam.scam_name}</li>
+                <li><strong>Description:</strong> {scam.scam_details}</li>
+                <li><strong>URL:</strong> {scam.url}</li>
+                <li><strong>Date Reported:</strong> {scam.reported_date}</li>
+              </ul>
+            </div>
+          )
+        }
+        else {
+          return (
+            <div className="scam-info subsequent" key={key}>
+              <ul>
+                <li><strong>Name:</strong> {scam.scam_name}</li>
+                <li><strong>Description:</strong> {scam.scam_details}</li>
+                <li><strong>URL:</strong> {scam.url}</li>
+                <li><strong>Date Reported:</strong> {scam.reported_date}</li>
+              </ul>
+            </div>
+          )
+        }
       })
     )
     }
@@ -55,9 +70,10 @@ class ScamList extends Component {
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Scam List</Modal.Title>
+            <Modal.Title>Associated Scams</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <p>{this.props.address}</p>
             {this.renderScams()}
           </Modal.Body>
           <Modal.Footer>

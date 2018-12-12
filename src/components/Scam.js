@@ -73,6 +73,7 @@ class Scam extends Component {
         return (
           <ScamList
             scams={this.state.scams}
+            address={this.props.address}
           />
         )
       }
