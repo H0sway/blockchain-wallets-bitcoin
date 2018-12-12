@@ -75,7 +75,7 @@ class Search extends Component {
         }
       })
       .then(data => {
-        if (data.data) {
+        if (data.data.data) {
           const txList = data.data.data;
           this.addToList(txList);
         }
