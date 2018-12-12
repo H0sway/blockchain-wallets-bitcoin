@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import ScamList from './ScamList';
+
 class Scam extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,7 @@ class Scam extends Component {
     }
     this.checkScam = this.checkScam.bind(this);
   }
+
   componentDidMount() {
     const address = this.props.address;
     this.setState({
@@ -49,6 +52,7 @@ class Scam extends Component {
       })
     })
   }
+
   checkScam() {
     if (this.state.scams.length) {
       this.setState({
@@ -62,11 +66,14 @@ class Scam extends Component {
       })
     }
   }
+
   showScam() {
     if (this.state.dataLoaded) {
       if (this.state.isScam) {
         return (
-          <p className="blacklisted">YES!</p>
+          <ScamList
+            scams={this.state.scams}
+          />
         )
       }
       else {
@@ -74,11 +81,6 @@ class Scam extends Component {
           <p>No</p>
         )
       }
-      // else {
-      //   return (
-      //   <button onClick={this.checkScam}>CHECK</button>
-      //   )
-      // }
     }
     if (this.state.loading) {
       return (
