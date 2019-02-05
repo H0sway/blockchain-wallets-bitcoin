@@ -10,7 +10,7 @@ const Header = () => {
     <div className="Header">
       <Navbar collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand>Blacklisted Wallet Checker</Navbar.Brand>
+          <Navbar.Brand>BitBak: The Bitcoin Wallet Background Check</Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
