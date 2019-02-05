@@ -96,7 +96,7 @@ class ThisAddress extends Component {
   }
   render() {
     return (
-      <tr>
+      <tr className="this-address">
         <th>{this.props.search}</th>
         <th className="scam">
           {this.showScam()}
