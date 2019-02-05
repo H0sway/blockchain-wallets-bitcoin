@@ -26,6 +26,7 @@ const Addresses = (props) => {
               </tr>
             </thead>
             <Address
+              search={props.search}
               tx={props.tx}
             />
           </Table>

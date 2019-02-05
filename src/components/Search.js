@@ -11,6 +11,7 @@ class Search extends Component {
     super();
     this.state = {
       walletAddress: "",
+      search: "",
       dataLoaded: false,
       transactions: [],
       error: false
@@ -30,7 +31,7 @@ class Search extends Component {
       walletAddress: e.target.value,
     })
   }
-  addToList(list) {
+  addToList(list, address) {
     let txList = [];
     list.map(block => {
       const inputs = block.inputs;
@@ -56,6 +57,7 @@ class Search extends Component {
     })
     this.setState({
       dataLoaded: true,
+      search: address,
       transactions: txList
     })
   }
@@ -77,7 +79,7 @@ class Search extends Component {
       .then(data => {
         if (data.data.data) {
           const txList = data.data.data;
-          this.addToList(txList);
+          this.addToList(txList, address);
         }
         else {
           alert("We couldn't find that address");
@@ -114,7 +116,7 @@ class Search extends Component {
             <button>Search!</button>
           </FormGroup>
         </form>
-        {this.state.dataLoaded ? <Addresses tx={this.state.transactions}/> : ''}
+        {this.state.dataLoaded ? <Addresses search={this.state.search} tx={this.state.transactions} /> : ''}
       </div>
     )
   }

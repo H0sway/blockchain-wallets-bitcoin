@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 // Import the Scam component
 import Scam from './Scam';
+import ThisAddress from './ThisAddress'
 
 class Address extends Component {
   constructor(props) {
@@ -24,6 +25,9 @@ class Address extends Component {
   render() {
     return (
       <tbody className="Address">
+        <ThisAddress
+          search={this.props.search}
+        />
         {this.renderTable()}
       </tbody>
     )

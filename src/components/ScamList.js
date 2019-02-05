@@ -28,6 +28,7 @@ class ScamList extends Component {
       scams.map(scam => {
         const key = scams.indexOf(scam);
 
+        // Need to distinguish between the first scam on the list and the rest for styling purposes.
         if (key == 0) {
           return (
             <div className="scam-info" key={key}>
