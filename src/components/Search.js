@@ -100,7 +100,10 @@ class Search extends Component {
         <div className="instructions">
           <h3>Instructions</h3>
           <p>
-            Input the bitcoin address you wish to search into the form below and click search.
+            Input the bitcoin address you wish to search into the form below and click search. Example: 17N2CNSDVGQt2bLEzPvh7j419a8eQdvRVx
+          </p>
+          <p>
+            I am limited to 100 calls to the BitcoinWhosWho API per day, if the scam column loads indefinitely that limit has likely been reached.
           </p>
         </div>
 
